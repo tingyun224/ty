@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表白倪涛铭</title>
+  <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'ZCOOL XiaoWei', serif;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255,255,255,0.7);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      padding: 48px 36px 36px 36px;
+      text-align: center;
+      position: relative;
+      min-width: 320px;
+    }
+    .love {
+      font-size: 2.2rem;
+      color: #ff4b2b;
+      margin-bottom: 24px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      animation: fadeInUp 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .heart {
+      width: 120px;
+      height: 108px;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 32px;
+      animation: beat 1s infinite cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .heart:before, .heart:after {
+      content: "";
+      position: absolute;
+      left: 60px;
+      top: 0;
+      width: 60px;
+      height: 96px;
+      background: #ff4b2b;
+      border-radius: 60px 60px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+      box-shadow: 0 4px 24px 0 rgba(255,75,43,0.2);
+    }
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      20% { transform: scale(1.1); }
+      40% { transform: scale(0.95); }
+      60% { transform: scale(1.05); }
+      80% { transform: scale(0.98); }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .message {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 16px;
+      animation: fadeInUp 1.8s 0.5s both;
+    }
+    .signature {
+      font-size: 1rem;
+      color: #888;
+      margin-top: 32px;
+      animation: fadeInUp 2.2s 1s both;
+    }
+    .floating-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: 999;
+      animation: floatUp 3s linear forwards;
+    }
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      80% { opacity: 0.8; }
+      100% { opacity: 0; transform: translateY(-200px) scale(1.5); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart"></div>
+    <div class="love">倪涛铭，我喜欢你！</div>
+    <div class="message">你的笑容，是我每天的阳光。<br>愿意做我的女朋友吗？</div>
+    <div class="signature">—— 你的秘密仰慕者</div>
+  </div>
+  <script>
+    // 漂浮爱心动画
+    function createFloatingHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.style.left = Math.random() * 90 + 'vw';
+      heart.style.top = '80vh';
+      heart.style.fontSize = (Math.random() * 24 + 24) + 'px';
+      heart.innerHTML = '❤';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 3000);
+    }
+    setInterval(createFloatingHeart, 500);
+  </script>
+</body>
+</html> 
